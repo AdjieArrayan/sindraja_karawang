@@ -1,0 +1,303 @@
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c6c19a;
+  }
+
+  .header {
+    width: 100%;
+    height: 160px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap : 200px;
+    padding: 0 38px;
+    background-color: #6c652f;
+  }
+
+  .logo {
+    width: 191px;
+    height: 190px;
+    margin-left: 50px;
+    object-fit: contain;
+  }
+
+  .title {
+    color: #fff;
+    font-family: Poppins, sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    margin-left: 177px;
+  }
+
+  .form-container {
+    width: 1189px;
+    margin-top: 50px;
+    border-radius: 15px;
+    box-shadow: 8px 0 30px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    background-color: #b7a93c;
+  }
+
+  .form-header {
+    padding: 17px 49px;
+    display: flex;
+    align-items: center;
+    gap: 75px;
+    background-color: #6c652f;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .plus-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .form-title {
+    color: #fff;
+    font-family: Poppins, sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .form-content {
+    padding: 40px 91px;
+  }
+
+  .form-group {
+    margin-bottom: 28px;
+  }
+
+  .label {
+    color: #000;
+    font-family: Poppins, sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .input-field,
+  .select-wrapper select,
+  .date-wrapper input,
+  textarea {
+    width: 100%;
+    height: 51px; /* Samakan tinggi semua elemen */
+    border-radius: 10px;
+    border: 2px solid #6c652f;
+    padding: 0 33px;
+    font-family: Poppins, sans-serif;
+    font-size: 22px;
+    color: #444;
+    background-color: #fff;
+    box-sizing: border-box; /* Pastikan padding tidak mempengaruhi ukuran */
+  }
+
+  .input-field-laporan-singkat {
+    min-height: 310px;
+    width: 100%; /* Menyesuaikan lebar */
+    height: 80px; /* Menambah tinggi */
+    font-size: 16px; /* Memperbesar teks */
+    padding: 10px; /* Menambah ruang dalam */
+    border-radius: 5px; /* Membuat sudut sedikit melengkung */
+    resize: vertical; /* Memungkinkan pengguna mengubah ukuran ke atas/bawah */
+  }
+
+  .input-field-catatan {
+    min-height: 150px;
+    width: 100%; /* Menyesuaikan lebar */
+    height: 80px; /* Menambah tinggi */
+    font-size: 16px; /* Memperbesar teks */
+    padding: 10px; /* Menambah ruang dalam */
+    border-radius: 5px; /* Membuat sudut sedikit melengkung */
+    resize: vertical; /* Memungkinkan pengguna mengubah ukuran ke atas/bawah */
+  }
+
+  .upload-container {
+    width: 100%;
+    height: 270px;
+    border: 2px solid #6c652f;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  .upload-box {
+    width: 940px;
+    height: 236px;
+    position: relative;
+  }
+
+  .upload-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .upload-icon {
+    width: 139px;
+    height: 92px;
+  }
+
+  .upload-text {
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    opacity: 0.5;
+  }
+
+  .dashed-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px dashed rgba(0, 0, 0, 0.2);
+  }
+
+  .select-wrapper {
+
+    position: relative;
+  }
+
+  .date-wrapper {
+    position: relative;
+  }
+
+  .calendar-icon-wrapper {
+    position: absolute;
+    right: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .calendar-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .form-footer {
+    padding: 23px 91px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #6c652f;
+  }
+
+  .btn-back,
+  .btn-next {
+    display: inline-block;
+    width: 204px;
+    height: 49px;
+    border-radius: 20px;
+    border: none;
+    color: #060606;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #e7e3e3;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    line-height: 49px;
+    text-decoration: none;
+  }
+
+  .btn-back:hover,
+  .btn-next:hover {
+    background-color: #d1d1d1;
+  }
+
+  @media (max-width: 991px) {
+    .form-container {
+      width: 95%;
+      margin: 20px;
+    }
+
+    .title {
+      font-size: 40px;
+      margin-left: 50px;
+    }
+
+    .form-content {
+      padding: 20px;
+    }
+
+    .input-field {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header {
+      height: auto;
+      padding: 20px;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 30px;
+      margin-left: 0;
+    }
+
+    .form-header {
+      padding: 15px;
+      gap: 20px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .form-title {
+      font-size: 24px;
+    }
+
+    .form-content {
+      padding: 15px;
+    }
+
+    .label {
+      font-size: 20px;
+    }
+
+    .input-field {
+      font-size: 18px;
+      height: 45px;
+    }
+
+    .btn-back,
+    .btn-next {
+      width: 45%;
+      font-size: 16px;
+    }
+  }

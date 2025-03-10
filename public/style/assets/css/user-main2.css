@@ -1,0 +1,124 @@
+/* Custom styles to complement Bootstrap */
+body {
+    font-family:
+      Poppins,
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+  }
+
+  .dashboard-container {
+    min-height: 100vh;
+    background-color: #1a1a1a;
+  }
+
+  .main-header {
+    min-height: 564px;
+    padding: 59px 0 11px;
+  }
+
+  .header-bg {
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+  }
+
+  .logo {
+    width: 57px;
+    height: auto;
+  }
+
+  .organization-name {
+    font-size: 27px;
+    font-weight: 600;
+    color: rgb(217, 217, 217);
+  }
+
+  .logout-btn {
+    background-color: rgb(176, 9, 9) !important;
+    color: white !important;
+    border-radius: 20px !important;
+    padding: 7px 18px !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+  }
+
+  .logout-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .welcome-message {
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  .welcome-illustration {
+    max-width: 462px;
+  }
+
+  .action-card {
+    background-color: rgb(205, 199, 156) !important;
+    border-radius: 20px !important;
+    border: none !important;
+  }
+
+  .card-icon {
+    width: 143px;
+    height: auto;
+  }
+
+  .card-title {
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 4px 8px;
+  }
+
+  .main-footer {
+    color: white;
+    font-family:
+      "Asap Condensed",
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+  }
+
+  .footer-motto {
+    font-family:
+      Poppins,
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-weight: 700;
+    border: 1px solid white;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    letter-spacing: 2px;
+  }
+
+  .contact-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: 991px) {
+    .welcome-message {
+      font-size: 40px;
+    }
+
+    .organization-name {
+      font-size: 24px;
+    }
+  }

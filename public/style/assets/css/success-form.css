@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+
+.success-screen {
+    font-family:
+      "Poppins",
+      apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(87deg, #312e16 29.76%, #6c652f 100.71%);
+    padding-bottom: 223px;
+    overflow: hidden;
+  }
+
+  .success-header {
+    background-color: rgb(28, 119, 51);
+  }
+
+  .success-main-image {
+    aspect-ratio: 1.01;
+    object-fit: contain;
+    width: 714px;
+    margin-left: 18px;
+  }
+
+  .success-confirmation-image {
+    aspect-ratio: 4.17;
+    object-fit: contain;
+    width: 321px;
+    border-radius: 20px;
+  }
+
+  .checkmark-icon {
+    width: 300px; /* Sesuaikan ukuran */
+    height: auto;
+    position: absolute;
+    top: 25%; /* Sesuaikan posisi vertikal */
+    right: 35%; /* Sesuaikan posisi horizontal */
+    transform: translate(50%, -50%);
+    }
+
+  .download-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .download-button:hover {
+    transform: scale(1.02);
+  }
+
+  .download-button:active {
+    transform: scale(0.98);
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .download-svg {
+    width: 321px;
+    height: 77px;
+  }
+
+  .download-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    user-select: none;
+  }
+
+  /* Accessibility */
+  .download-button:focus {
+    outline: 2px solid #24d467;
+    outline-offset: 4px;
+  }
+
+  .download-button:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Disabled state */
+  .download-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+

@@ -1,0 +1,146 @@
+/* Custom styles that can't be achieved with Bootstrap alone */
+.app-container {
+    background: linear-gradient(181deg, #312e16 18.21%, #6c652f 99.31%);
+    display: flex;
+    justify-content: center;
+  }
+
+  .back-button {
+    top: 69px;
+    left: 73px;
+  }
+
+  .logo {
+    width: 439px;
+    height: 343px;
+    object-fit: contain;
+  }
+
+  .login-title {
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 45px;
+  }
+
+  .custom-input {
+    height: 77px;
+    border-radius: 20px !important;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    color: rgba(108, 101, 47, 0.8);
+    background-color: #d9d9d9 !important;
+    padding: 0 20px;
+  }
+
+  .login-button {
+    width: 151px;
+    height: 57px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background-color: #1c7733;
+  }
+
+  .login-button:hover {
+    background-color: #166329;
+    color: #fff;
+  }
+
+  .guest-text {
+    color: #fff;
+    font-family: "Almarai", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+
+  .guest-button {
+    width: 150px;
+    height: 47px;
+    border-radius: 20px;
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    background-color: #ebd642;
+  }
+
+  .guest-button:hover {
+    background-color: #d4c03a;
+    color: #000;
+  }
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 850px;
+    height: 100%;
+    background: url("https://cdn.builder.io/api/v1/image/assets/TEMP/83e651b4f4907ea5e9d8ad885b64700d7ce44347")
+      no-repeat center/cover;
+    opacity: 0.3;
+    border-top: 1px solid #000;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+  }
+
+  /* Media Queries */
+  @media (max-width: 991px) {
+    .logo {
+      width: 300px;
+      height: 234px;
+    }
+
+    .login-title {
+      font-size: 36px;
+    }
+
+    .custom-input {
+      height: 60px;
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .back-button {
+      top: 20px;
+      left: 20px;
+    }
+
+    .logo {
+      width: 200px;
+      height: 156px;
+    }
+
+    .login-title {
+      font-size: 28px;
+    }
+
+    .custom-input {
+      height: 50px;
+      font-size: 16px;
+    }
+
+    .login-button {
+      width: 120px;
+      height: 45px;
+      font-size: 20px;
+    }
+
+    .guest-button {
+      width: 120px;
+      height: 40px;
+      font-size: 20px;
+    }
+
+    .background-image {
+      display: none;
+    }
+  }

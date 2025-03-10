@@ -1,0 +1,154 @@
+.app-container {
+    min-height: 100vh;
+    background: linear-gradient(91deg, #312e16 19.43%, #6c652f 115.48%);
+    position: relative;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .header-bg {
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  .logo {
+    width: 57px;
+    height: 74px;
+    isolation: isolate;
+  }
+
+  .title {
+    color: #d9d9d9;
+    font-size: 27px;
+    font-weight: 600;
+    isolation: isolate;
+  }
+
+  .logout-btn {
+    color: #fff;
+    font-size: 24px;
+    padding: 7px 20px;
+    border-radius: 20px;
+    background-color: #b00909;
+    border: none;
+    font-family: inherit;
+    transition: background-color 0.2s ease;
+    isolation: isolate;
+  }
+
+  .logout-btn:hover {
+    background-color: #900707;
+  }
+
+  .welcome-text {
+    color: #fff;
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    isolation: isolate;
+  }
+
+  .mascot-image {
+    width: 432px;
+    height: auto;
+    isolation: isolate;
+  }
+
+  .menu-item {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-top: -50px;
+    height: 262px;
+    border-radius: 20px;
+    background-color: #cdc79c;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .menu-item:hover {
+    transform: scale(1.02);
+  }
+
+  .menu-icon {
+    width: 140px;
+    height: 140px;
+  }
+
+  .menu-text {
+    color: #000;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .footer-overlay {
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 75px;
+  }
+
+  .contact-link {
+    opacity: 0.9;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s;
+  }
+
+  .contact-link:hover {
+    opacity: 1;
+    color: white;
+  }
+
+  .contact-item:hover {
+    opacity: 0.8;
+    color: #fff;
+  }
+
+  @media (max-width: 991px) {
+    .title {
+      font-size: 20px;
+    }
+
+    .welcome-text {
+      font-size: 35px;
+    }
+
+    .menu-item {
+      height: 220px;
+    }
+
+    .footer-contacts {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .title {
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .welcome-text {
+      font-size: 25px;
+    }
+
+    .menu-item {
+      height: 200px;
+    }
+
+    .menu-icon {
+      width: 100px;
+      height: 100px;
+    }
+
+    .footer-contacts {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
