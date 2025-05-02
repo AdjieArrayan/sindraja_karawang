@@ -2,6 +2,7 @@
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #c6c19a;
   }
 
   .container {
@@ -9,7 +10,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #c6c19a;
   }
 
   .header {
@@ -18,15 +18,14 @@
     box-shadow: 0 10px 12px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: center;
-    gap : 200px;
+    justify-content: space-between;
     padding: 0 38px;
     background-color: #6c652f;
   }
 
   .logo {
-    width: 191px;
-    height: 190px;
-    margin-left: 50px;
+    width: 150px;
+    height: auto;
     object-fit: contain;
   }
 
@@ -35,11 +34,13 @@
     font-family: Poppins, sans-serif;
     font-size: 50px;
     font-weight: 700;
-    margin-left: 177px;
+    text-align: center;
+    flex-grow: 1;
   }
 
   .form-container {
-    width: 1189px;
+    width: 90%;
+    max-width: 1200px;
     margin-top: 50px;
     border-radius: 15px;
     box-shadow: 8px 0 30px 10px rgba(0, 0, 0, 0.15);
@@ -79,6 +80,9 @@
   }
 
   .form-group {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
     margin-bottom: 28px;
   }
 
@@ -96,7 +100,7 @@
   .date-wrapper input,
   textarea {
     width: 100%;
-    height: 51px; /* Samakan tinggi semua elemen */
+    height: 51px;
     border-radius: 10px;
     border: 2px solid #6c652f;
     padding: 0 33px;
@@ -104,31 +108,33 @@
     font-size: 22px;
     color: #444;
     background-color: #fff;
-    box-sizing: border-box; /* Pastikan padding tidak mempengaruhi ukuran */
+    box-sizing: border-box;
   }
 
   .input-field-laporan-singkat {
     min-height: 310px;
-    width: 100%; /* Menyesuaikan lebar */
-    height: 80px; /* Menambah tinggi */
-    font-size: 16px; /* Memperbesar teks */
-    padding: 10px; /* Menambah ruang dalam */
-    border-radius: 5px; /* Membuat sudut sedikit melengkung */
-    resize: vertical; /* Memungkinkan pengguna mengubah ukuran ke atas/bawah */
+    width: 100%;
+    height: 80px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    resize: vertical;
   }
 
   .input-field-catatan {
     min-height: 150px;
-    width: 100%; /* Menyesuaikan lebar */
-    height: 80px; /* Menambah tinggi */
-    font-size: 16px; /* Memperbesar teks */
-    padding: 10px; /* Menambah ruang dalam */
-    border-radius: 5px; /* Membuat sudut sedikit melengkung */
-    resize: vertical; /* Memungkinkan pengguna mengubah ukuran ke atas/bawah */
+    width: 100%;
+    height: 80px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    resize: vertical;
   }
 
   .upload-container {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
     height: 270px;
     border: 2px solid #6c652f;
     border-radius: 10px;
@@ -179,7 +185,6 @@
   }
 
   .select-wrapper {
-
     position: relative;
   }
 
@@ -209,9 +214,11 @@
 
   .btn-back,
   .btn-next {
-    display: inline-block;
-    width: 204px;
-    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    height: 45px;
     border-radius: 20px;
     border: none;
     color: #060606;
@@ -222,7 +229,6 @@
     background-color: #e7e3e3;
     transition: background-color 0.3s ease;
     text-align: center;
-    line-height: 49px;
     text-decoration: none;
   }
 
@@ -265,6 +271,10 @@
       margin-bottom: 20px;
     }
 
+    .hide-on-mobile {
+        display: none !important;
+    }
+
     .title {
       font-size: 30px;
       margin-left: 0;
@@ -295,9 +305,17 @@
       height: 45px;
     }
 
+    .form-footer {
+        gap: 50px;
+    }
+
     .btn-back,
     .btn-next {
-      width: 45%;
+      width: 100%;
       font-size: 16px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      height: 40px;
     }
   }

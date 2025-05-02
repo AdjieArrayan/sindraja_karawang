@@ -1,0 +1,239 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c6c19a;
+  }
+
+  .header {
+    width: 100%;
+    height: 160px;
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #6c652f;
+  }
+
+  .logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .title {
+    color: #fff;
+    font-family: Poppins, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    flex-grow: 1;
+  }
+
+  .form-container {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 50px;
+    border-radius: 15px;
+    box-shadow: 8px 0 30px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    background-color: #b7a93c;
+  }
+
+  .form-header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6c652f;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .plus-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .form-title {
+    color: #fff;
+    font-family: Poppins, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .form-content {
+    padding: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .label {
+    color: #000;
+    font-family: Poppins, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .input-field,
+  .select-wrapper select,
+  .date-wrapper input,
+  textarea {
+    width: 100%;
+    height: 45px;
+    border-radius: 10px;
+    border: 2px solid #6c652f;
+    padding: 0 15px;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    color: #444;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
+  .input-field-laporan-singkat,
+  .input-field-catatan {
+    min-height: 150px;
+    height: auto;
+    font-size: 18px;
+    padding: 10px;
+    resize: vertical;
+  }
+
+  .upload-container {
+    width: 100%;
+    height: 200px;
+    border: 2px solid #6c652f;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  .upload-box {
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+  }
+
+  .upload-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .upload-icon {
+    width: 100px;
+    height: 75px;
+  }
+
+  .upload-text {
+    font-size: 20px;
+    opacity: 0.7;
+  }
+
+  .form-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #6c652f;
+  }
+
+  .btn-back,
+  .btn-next {
+    width: 45%;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    color: #060606;
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #e7e3e3;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    line-height: 45px;
+    text-decoration: none;
+  }
+
+  .btn-back:hover,
+  .btn-next:hover {
+    background-color: #d1d1d1;
+  }
+
+  @media (max-width: 991px) {
+    .title {
+      font-size: 30px;
+    }
+    .form-content {
+      padding: 20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header {
+      flex-direction: column;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .title {
+      font-size: 24px;
+    }
+
+    .form-header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .form-title {
+      font-size: 20px;
+    }
+
+    .form-content {
+      padding: 10px;
+    }
+
+    .label {
+      font-size: 18px;
+    }
+
+    .input-field {
+      font-size: 16px;
+      height: 40px;
+    }
+
+    .btn-back,
+    .btn-next {
+      width: 100%;
+      font-size: 16px;
+      height: 40px;
+    }
+  }

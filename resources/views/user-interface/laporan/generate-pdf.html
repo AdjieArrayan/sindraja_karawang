@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laporan Kegiatan Satpol PP</title>
+    <style>
+        :root {
+            --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+            "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+            "Source Han Sans CN", sans-serif;
+        }
+
+        .main-container {
+            overflow: hidden;
+        }
+
+        .main-container,
+        .main-container * {
+            box-sizing: border-box;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            outline: 0;
+        }
+
+        .main-container {
+            position: relative;
+            width: 1246.001px;
+            height: 1400px;
+            margin: 0 auto;
+        }
+        .rectangle {
+            position: absolute;
+            width: 1041px;
+            height: 1400px;
+            top: 0;
+            left: 0;
+            background: #ffffff;
+        }
+        .line {
+            position: relative;
+            width: 677.002px;
+            height: 2.053px;
+            margin: 241px 0 0 255px;
+            background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/PHjaseUMZK.png)
+            no-repeat center;
+            background-size: cover;
+            z-index: 5;
+        }
+        .header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+            width: 552px;
+            height: 46px;
+            margin: 23.947px 0 0 254px;
+            color: #000000;
+            font-family: Times New Roman, var(--default-font-family);
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 24.148px;
+            text-align: center;
+            z-index: 2;
+        }
+        .logo-karawang {
+            position: absolute;
+            width: 186px;
+            height: 133px;
+            top: 79px;
+            left: 105px;
+            background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/ZARQfTaWwY.png)
+            no-repeat center;
+            background-size: cover;
+            z-index: 4;
+        }
+        .header-text {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: absolute;
+            width: 622px;
+            height: 56px;
+            top: 108px;
+            left: 276px;
+            color: #000000;
+            font-family: Times New Roman, var(--default-font-family);
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 36.797px;
+            text-align: center;
+            z-index: 1;
+        }
+        .address {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            position: absolute;
+            width: 622px;
+            height: 19px;
+            top: 185px;
+            left: 276px;
+            color: #000000;
+            font-family: Times New Roman, var(--default-font-family);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 18.398px;
+            text-align: center;
+            white-space: nowrap;
+            z-index: 3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1.2px solid black;
+        }
+
+        td {
+            padding: 8px;
+            vertical-align: top;
+        }
+
+        .img-doc {
+            margin-top: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&display=swap" />
+    <!-- <link rel="stylesheet" href="{{asset('style/assets/css/admin/generate-form.css') }}" /> -->
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="rectangle">
+            <div class="line"></div>
+            <span class="header">
+                SISTEM INFORMASI DIGITAL POLISI PAMONG PRAJA<br />
+                KABUPATEN KARAWANG</span>
+            <div class="logo-karawang"> </div>
+                <span class="header-text">
+                    PEMERINTAH KABUPATEN KARAWANG<br />
+                    SATUAN POLISI PAMONG PRAJA
+                </span>
+                <span class="address">
+                    Jl. Jenderal Ahmad Yani No.70, Nagasari, Kec. Karawang Bar.,
+                    Karawang, Jawa Barat 41314
+                </span>
+
+                <table>
+                    <tr>
+                        <td>Nama Pelapor</td>
+                        <td>{{ $laporan->nama_pelapor }}</td>
+                    </tr>
+                    <tr>
+                        <td>Regu</td>
+                        <td>{{ $laporan->regu_pelapor }}</td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kegiatan</td>
+                        <td>{{ $laporan->jenis_kegiatan }}</td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Kegiatan</td>
+                        <td>{{ \Carbon\Carbon::parse($laporan->tanggal_kegiatan)->translatedFormat('l, d F Y') }}</td>
+                    </tr>
+                    <tr>
+                        <td>Waktu Kegiatan</td>
+                        <td>{{ $laporan->waktu_kegiatan }}</td>
+                    </tr>
+                    <tr>
+                        <td>Lokasi</td>
+                        <td>{{ $laporan->lokasi_kegiatan }}</td>
+                    </tr>
+                    <tr>
+                        <td>Anggota Terlibat</td>
+                        <td>{{ $laporan->anggota_terlibat }}</td>
+                    </tr>
+                    <tr>
+                        <td>Unsur Terlibat</td>
+                        <td>{{ $laporan->unsur_terlibat }}</td>
+                    </tr>
+                    <tr>
+                        <td>Laporan Singkat</td>
+                        <td>{{ $laporan->laporan_singkat }}</td>
+                    </tr>
+                    <tr>
+                        <td>Situasi Kondisi</td>
+                        <td>{{ $laporan->situasi_kondisi }}</td>
+                    </tr>
+                    <tr>
+                        <td>Catatan</td>
+                        <td>{{ $laporan->catatan_laporan }}</td>
+                    </tr>
+                    <tr>
+                        <td>Dokumentasi</td>
+                        <td>
+                            @if ($laporan->dokumentasi_laporan)
+                                <img src="{{ public_path('storage/' . $laporan->dokumentasi_laporan) }}" class="img-doc" alt="Dokumentasi Kegiatan">
+                            @else
+                                Tidak ada dokumentasi.
+                            @endif
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+  </body>
+</html>

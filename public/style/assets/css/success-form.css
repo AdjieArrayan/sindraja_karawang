@@ -1,104 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
-
-.success-screen {
-    font-family:
-      "Poppins",
-      apple-system,
-      Roboto,
-      Helvetica,
-      sans-serif;
+.success-message-container {
+    background: linear-gradient(181deg, #312e16 18.21%, #6c652f 99.31%);
+    min-height: 100vh;
+    padding-bottom: 223px;
+    font-family: 'Poppins', sans-serif;
     font-size: 52px;
     font-weight: 700;
-    color: #ffffff;
-    background: linear-gradient(87deg, #312e16 29.76%, #6c652f 100.71%);
-    padding-bottom: 223px;
-    overflow: hidden;
-  }
+}
 
-  .success-header {
-    background-color: rgb(28, 119, 51);
-  }
+.success-header {
+    background-color: rgba(28, 119, 51, 1);
+    padding: 36px 70px;
+}
 
-  .success-main-image {
-    aspect-ratio: 1.01;
+.success-illustration {
+    aspect-ratio: 1.39;
     object-fit: contain;
-    width: 714px;
-    margin-left: 18px;
-  }
+    width: 604px;
+}
 
-  .success-confirmation-image {
-    aspect-ratio: 4.17;
+.success-additional-image {
+    aspect-ratio: 3.64;
     object-fit: contain;
     width: 321px;
     border-radius: 20px;
-  }
+}
 
-  .checkmark-icon {
-    width: 300px; /* Sesuaikan ukuran */
-    height: auto;
-    position: absolute;
-    top: 25%; /* Sesuaikan posisi vertikal */
-    right: 35%; /* Sesuaikan posisi horizontal */
-    transform: translate(50%, -50%);
+@media (max-width: 991px) {
+    .success-message-container {
+        padding-bottom: 100px;
+        font-size: 40px;
     }
 
-  .download-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
+    .success-header {
+        padding: 36px 20px;
+    }
+}
 
-  .download-button:hover {
-    transform: scale(1.02);
-  }
+@media (max-width: 640px) {
+    .success-header {
+        font-size: 30px;
+    }
 
-  .download-button:active {
-    transform: scale(0.98);
-  }
-
-  .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .button-content {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .download-svg {
-    width: 321px;
-    height: 77px;
-  }
-
-  .download-text {
-    font-family: "Inter", sans-serif;
-    font-weight: 700;
-    user-select: none;
-  }
-
-  /* Accessibility */
-  .download-button:focus {
-    outline: 2px solid #24d467;
-    outline-offset: 4px;
-  }
-
-  .download-button:focus:not(:focus-visible) {
-    outline: none;
-  }
-
-  /* Disabled state */
-  .download-button:disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
-  }
-
+    .success-additional-image {
+        width: 295px;
+    }
+}

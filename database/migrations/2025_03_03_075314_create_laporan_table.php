@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('laporan', function (Blueprint $table) {
-            $table->id('id_laporan');
-            $table->string('nama_pelapor');
-            $table->string('regu_pelapor');
-            $table->string('jenis_kegiatan');
+            $table->id('id_laporan')->unique()->autoIncrement();
+            $table->string('nama_pelapor', 100);
+            $table->string('regu_pelapor', 100);
+            $table->string('jenis_kegiatan', 100);
             $table->date('tanggal_kegiatan');
             $table->time('waktu_kegiatan');
             $table->string('lokasi_kegiatan');
@@ -23,9 +23,10 @@ return new class extends Migration
             $table->text('unsur_terlibat');
             $table->text('laporan_singkat');
             $table->text('situasi_kondisi');
-            $table->string('dokumentasi_laporan');
+            $table->string('dokumentasi_laporan')->nullable();
             $table->text('catatan_laporan')->nullable();
             $table->timestamps();
+            $table->softDeletes(); // ← Tambahan untuk soft delete
         });
     }
 

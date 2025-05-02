@@ -1,41 +1,51 @@
-/* Custom styles that can't be achieved with Bootstrap alone */
-.app-container {
+/* Custom styles that complement Bootstrap */
+.login-container {
     background: linear-gradient(181deg, #312e16 18.21%, #6c652f 99.31%);
-    display: flex;
-    justify-content: center;
+    overflow: hidden;
   }
 
-  .back-button {
+  .top-header {
     top: 69px;
     left: 73px;
   }
 
-  .logo {
-    width: 439px;
-    height: 343px;
-    object-fit: contain;
+  .back-button {
+    position: absolute;
+    top: 20px; /* atau sesuai layout */
+    left: 20px;
+    z-index: 999;
+    background: none;
+    border: none;
+  }
+
+  .logo-image {
+    max-width: 439px;
+    height: auto;
   }
 
   .login-title {
-    color: #fff;
     font-family: "Poppins", sans-serif;
     font-size: 48px;
-    font-weight: 700;
     line-height: 45px;
+  }
+
+  .login-form {
+    max-width: 400px;
+    width: 100%;
   }
 
   .custom-input {
     height: 77px;
-    border-radius: 20px !important;
+    border-radius: 16px !important;
     border: none;
+    padding: 0 45px 0 16px;
     font-family: "Poppins", sans-serif;
-    font-size: 24px;
+    font-size: 18px;
     color: rgba(108, 101, 47, 0.8);
     background-color: #d9d9d9 !important;
-    padding: 0 20px;
   }
 
-  .login-button {
+  .submit-button {
     width: 151px;
     height: 57px;
     border-radius: 20px;
@@ -47,13 +57,7 @@
     background-color: #1c7733;
   }
 
-  .login-button:hover {
-    background-color: #166329;
-    color: #fff;
-  }
-
   .guest-text {
-    color: #fff;
     font-family: "Almarai", sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -71,76 +75,101 @@
     background-color: #ebd642;
   }
 
-  .guest-button:hover {
-    background-color: #d4c03a;
-    color: #000;
-  }
-
-  .background-image {
+  .background-overlay {
     position: absolute;
     top: 0;
     right: 0;
-    width: 850px;
+    width: 730px;
     height: 100%;
-    background: url("https://cdn.builder.io/api/v1/image/assets/TEMP/83e651b4f4907ea5e9d8ad885b64700d7ce44347")
-      no-repeat center/cover;
+    background: url("/style/assets/image/hero_img/login-background.png") no-repeat center center;
+    background-size: cover;
     opacity: 0.3;
     border-top: 1px solid #000;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2px);
-    z-index: 1;
+    z-index: 0;
   }
 
-  /* Media Queries */
-  @media (max-width: 991px) {
-    .logo {
-      width: 300px;
-      height: 234px;
+  @media (max-width: 1200px) {
+    .login-form {
+      max-width: 500px;
     }
 
-    .login-title {
-      font-size: 36px;
-    }
-
-    .custom-input {
-      height: 60px;
-      font-size: 20px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .back-button {
+   .top-header {
       top: 20px;
       left: 20px;
     }
 
-    .logo {
-      width: 200px;
-      height: 156px;
+    .logo-wrapper {
+      padding: 0 20px; /* Tambah spasi di kiri dan kanan */
+      text-align: center; /* Biar tetap rapi */
     }
 
+    .logo-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+
     .login-title {
-      font-size: 28px;
+      font-size: 36px;
+      line-height: 40px;
     }
 
     .custom-input {
-      height: 50px;
-      font-size: 16px;
+      height: 60px;
+      font-size: 18px;
     }
 
-    .login-button {
-      width: 120px;
-      height: 45px;
+    .submit-button {
+      width: 130px;
+      height: 50px;
       font-size: 20px;
     }
 
     .guest-button {
-      width: 120px;
+      width: 130px;
       height: 40px;
       font-size: 20px;
     }
 
-    .background-image {
-      display: none;
-    }
+    .background-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: url("https://cdn.builder.io/api/v1/image/assets/TEMP/83e651b4f4907ea5e9d8ad885b64700d7ce44347") no-repeat center center;
+        background-size: cover;
+        opacity: 0.3;
+        border-top: 1px solid #000;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(2px);
+        z-index: 0;
+      }
+
+/* --- FIX POSISI DAN INTERAKSI LAYER --- */
+.login-container {
+    position: relative;
+    z-index: 1;
   }
+
+  .login-section,
+  .login-form,
+  input,
+  .submit-button,
+  .guest-button,
+  .logo-wrapper,
+  .login-title {
+    position: relative;
+    z-index: 2;
+  }
+
+  .background-overlay {
+    z-index: 0 !important;
+  }
+
+}

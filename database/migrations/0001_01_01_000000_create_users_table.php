@@ -12,15 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id('id_user');
+            $table->id('id');
             $table->string('name');
             $table->string('username')->unique();
-            $table->string('email')->nullable()->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('user_password');
+            $table->string('password');
             $table->string('role');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes(); // ← Tambahan untuk soft delete
         });
 
         Schema::create('sessions', function (Blueprint $table) {

@@ -1,0 +1,296 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+  }
+
+  .main-container {
+    overflow: hidden;
+  }
+
+  .main-container,
+  .main-container * {
+    box-sizing: border-box;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    outline: 0;
+  }
+
+  .main-container {
+    position: relative;
+    width: 1246.001px;
+    height: 1400px;
+    margin: 0 auto;
+  }
+  .rectangle {
+    position: absolute;
+    width: 1041px;
+    height: 1400px;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+  }
+  .line {
+    position: relative;
+    width: 677.002px;
+    height: 2.053px;
+    margin: 241px 0 0 255px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/PHjaseUMZK.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 5;
+  }
+  .sistem-informasi-digital {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: 552px;
+    height: 46px;
+    margin: 23.947px 0 0 254px;
+    color: #000000;
+    font-family: Times New Roman, var(--default-font-family);
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 24.148px;
+    text-align: center;
+    z-index: 2;
+  }
+  .image {
+    position: absolute;
+    width: 186px;
+    height: 133px;
+    top: 79px;
+    left: 105px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/ZARQfTaWwY.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 4;
+  }
+  .pemkab-karawang-satpol-pp {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 622px;
+    height: 56px;
+    top: 108px;
+    left: 276px;
+    color: #000000;
+    font-family: Times New Roman, var(--default-font-family);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36.797px;
+    text-align: center;
+    z-index: 1;
+  }
+  .jl-ahmad-yani-nagasari-karawang {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    width: 622px;
+    height: 19px;
+    top: 185px;
+    left: 276px;
+    color: #000000;
+    font-family: Times New Roman, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.398px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 3;
+  }
+  .line-1 {
+    position: absolute;
+    width: 1.069px;
+    height: 787px;
+    top: 347.95px;
+    left: 930.931px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/cJ0FDMMMQ9.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 9;
+  }
+  .line-2 {
+    position: absolute;
+    width: 787.001px;
+    height: 2px;
+    top: 347px;
+    left: 144.999px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/2oMA1nP5b5.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 8;
+  }
+  .line-3 {
+    position: absolute;
+    width: 1px;
+    height: 787px;
+    top: 348px;
+    left: 337px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/aSndFqWrvv.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 10;
+  }
+  .line-1-4 {
+    position: absolute;
+    width: 1.15px;
+    height: 786px;
+    top: 349px;
+    left: 144.85px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/ujVMy7JTmc.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 6;
+  }
+  .line-2-5 {
+    position: absolute;
+    width: 787.001px;
+    height: 1px;
+    top: 1134px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/QxjA2VSm55.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 7;
+  }
+  .line-3-6 {
+    position: absolute;
+    width: 1109.002px;
+    height: 9px;
+    top: 385px;
+    left: 140.999px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/uPeH9buU6z.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 11;
+  }
+  .line-4 {
+    position: absolute;
+    width: 1101px;
+    height: 1px;
+    top: 429px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/2KSaTCk02z.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 12;
+  }
+  .line-5 {
+    position: absolute;
+    width: 1101px;
+    height: 1px;
+    top: 429px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/8MYEQyMQgq.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 13;
+  }
+  .line-1-7 {
+    position: absolute;
+    width: 1101.001px;
+    height: 1px;
+    top: 473px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/BAjSN4EnJJ.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 14;
+  }
+  .line-2-8 {
+    position: absolute;
+    width: 1101.001px;
+    height: 1px;
+    top: 517px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/Rn1TtrgmiQ.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 15;
+  }
+  .line-3-9 {
+    position: absolute;
+    width: 1101.001px;
+    height: 1px;
+    top: 560px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/Ck4TNFXtGk.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 16;
+  }
+  .line-4-a {
+    position: absolute;
+    width: 1101.001px;
+    height: 1px;
+    top: 604px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/Qw4pUoZBL9.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 17;
+  }
+  .line-5-b {
+    position: absolute;
+    width: 1101.001px;
+    height: 1px;
+    top: 646px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/8h7PnAErm5.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 22;
+  }
+  .line-c {
+    position: absolute;
+    width: 1101.001px;
+    height: 1px;
+    top: 692px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/HgktEq6xk4.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 18;
+  }
+  .line-d {
+    position: absolute;
+    width: 1101.001px;
+    height: 1px;
+    top: 760px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/36P5gX3QE0.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 19;
+  }
+  .line-e {
+    position: absolute;
+    width: 1101.001px;
+    height: 1px;
+    top: 804px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/wCY7kA4L9A.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 20;
+  }
+  .line-f {
+    position: absolute;
+    width: 1101.001px;
+    height: 1px;
+    top: 1085px;
+    left: 145px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-04-29/fX7reVMSHB.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 21;
+  }
