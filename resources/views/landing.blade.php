@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Satuan Polisi Pamong Praja Kabupaten Karawang</title>
+    <link rel="icon" href="{{ asset('logo-sindraja.png') }}" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Almendra&family=Asap+Condensed&family=Poppins:wght@700&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="{{asset('style/assets/css/landing.css') }}" />

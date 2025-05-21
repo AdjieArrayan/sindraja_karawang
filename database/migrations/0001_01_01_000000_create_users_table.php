@@ -15,11 +15,13 @@ return new class extends Migration
             $table->id('id');
             $table->string('name');
             $table->string('username')->unique();
+            $table->string('nip')->nullable();
+            $table->string('jabatan')->nullable();
             $table->string('password');
             $table->string('role');
             $table->rememberToken();
             $table->timestamps();
-            $table->softDeletes(); // ← Tambahan untuk soft delete
+            $table->softDeletes();
         });
 
         Schema::create('sessions', function (Blueprint $table) {

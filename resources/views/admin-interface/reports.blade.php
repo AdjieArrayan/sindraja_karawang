@@ -8,7 +8,7 @@
 
 <main class="main-content p-4">
     <header class="mb-4">
-      <h1 class="page-title">Report</h1>
+      <h1 class="page-title">Laporan</h1>
     </header>
 
     <section>
@@ -20,7 +20,7 @@
         <table id="report" class="table table-striped nowrap datatables" style="width:100%">
             <thead>
                 <tr>
-                    <th>Id Laporan</th>
+                    <th>Nomer Laporan</th>
                     <th>Nama Pelapor</th>
                     <th>Jenis Kegiatan</th>
                     <th>Tanggal Kegiatan</th>
@@ -67,6 +67,9 @@
                             <div class="col-md-6 mb-2"><strong class="text-muted">Tanggal dan Waktu Kegiatan</strong><br>{{ \Carbon\Carbon::parse($item->tanggal_kegiatan)->format('d-m-Y') }} {{ $item->waktu_kegiatan }}</div>
                             <div class="col-md-6 mb-2"><strong class="text-muted">Lokasi Kegiatan</strong><br>{{ $item->lokasi_kegiatan }}</div>
                             <div class="col-md-6 mb-2"><strong class="text-muted">Anggota Terlibat</strong><br>{{ $item->anggota_terlibat }}</div>
+                            <div class="col-md-6 mb-2"><strong class="text-muted">Dokumentasi</strong><br>
+                                <img src="{{ public_path('storage/' . $item->dokumentasi_laporan) }}" class="img-doc" alt="Dokumentasi Kegiatan">
+                            </div>
                         </div>
                         <div>
                             <strong class="text-muted">Laporan Singkat</strong><br>

@@ -20,7 +20,7 @@
                 <div class="stats-card d-flex">
                     <div class="stats-info rounded-4 d-flex flex-column align-items-center justify-content-center">
                         <div class="stats-number d-flex align-items-center justify-content-center">{{ $jumlahUser }}</div>
-                        <span class="stats-label mt-3">Users</span>
+                        <span class="stats-label mt-3">Pengguna</span>
                     </div>
                     <div class="stats-icon rounded-4 d-flex align-items-center justify-content-center">
                         <svg width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">

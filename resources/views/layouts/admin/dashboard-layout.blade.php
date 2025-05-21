@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title')</title>
+    <link rel="icon" href="{{ asset('logo-sindraja.png') }}" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@700;800&family=Almarai:wght@400;700;800&display=swap" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -21,7 +22,7 @@
         </div>
 
         <div class="text-center my-4">
-          <h2 class="welcome-text mb-0">Welcome Back</h2>
+          <h2 class="welcome-text mb-0">Selamat Datang</h2>
           <h1 class="admin-text">{{ auth()->check() ? auth()->user()->username : 'NAMA' }}!</h1>
         </div>
 
@@ -35,13 +36,13 @@
           <li class="nav-item">
             <a href="user-management" class="nav-link d-flex align-items-center gap-3 p-3 rounded-4">
               <i class="ti ti-users fs-2"></i>
-              <span class="nav-text">Users</span>
+              <span class="nav-text">Pengguna</span>
             </a>
           </li>
           <li class="nav-item">
             <a href="report" class="nav-link d-flex align-items-center gap-3 p-3 rounded-4">
               <i class="ti ti-file fs-2"></i>
-              <span class="nav-text">Reports</span>
+              <span class="nav-text">Laporan</span>
             </a>
           </li>
         </ul>

@@ -37,6 +37,18 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="nip" class="form-label fw-semibold">NIP</label>
+                        <input type="text" name="nip" class="form-control border border-2" id="nip"
+                               value="{{ $user->nip }}" placeholder="Masukkan NIP">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="jabatan" class="form-label fw-semibold">Jabatan</label>
+                        <input type="text" name="jabatan" class="form-control border border-2" id="jabatan"
+                               value="{{ $user->jabatan }}" placeholder="Masukkan Jabatan">
+                    </div>
+
+                    <div class="mb-3">
                         <label for="password" class="form-label fw-semibold">Password</label>
                         <input type="password" name="password" class="form-control border border-2" id="password"
                                placeholder="Kosongkan jika tidak diubah">

@@ -16,17 +16,18 @@
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h2 class="fw-bold" style="color: #4a4a4a; font-family: 'Poppins', sans-serif;">Daftar Pengguna</h2>
                 <a href="{{ route('users.create') }}" class="btn btn-dark rounded-3">
-                    <i class="ti ti-plus me-1"></i> Add User
+                    <i class="ti ti-plus me-1"></i> Tambah Pengguna
                 </a>
             </div>
 
         <table id="user-management" class="table table-striped nowrap datatables" style="width:100%">
             <thead>
                 <tr>
-                    <th>Fullname</th>
+                    <th>Nama Lengkap</th>
                     <th>Username</th>
+                    <th>NIP</th>
+                    <th>Jabatan</th>
                     <th>Role</th>
-                    <th>Password</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -35,8 +36,9 @@
                     <tr>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->username }}</td>
+                        <td>{{ $user->nip }}</td>
+                        <td>{{ $user->jabatan }}</td>
                         <td>{{ ucfirst($user->role) }}</td>
-                        <td>*******</td>
                         <td class="d-flex gap-2">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#detailModal-{{ $user->id }}" title="View">
                                 <i class="ti ti-eye fs-5" style="color: black;"></i>
@@ -63,8 +65,9 @@
                                 <div class="modal-body text-start px-4 pb-4">
                                     <p><strong class="text-muted">Nama Lengkap</strong><br>{{ $user->name }}</p>
                                     <p><strong class="text-muted">Username</strong><br>{{ $user->username }}</p>
+                                    <p><strong class="text-muted">NIP</strong><br>{{ $user->nip }}</p>
+                                    <p><strong class="text-muted">Jabatan</strong><br>{{ $user->jabatan }}</p>
                                     <p><strong class="text-muted">Role</strong><br>{{ ucfirst($user->role) }}</p>
-                                    <p><strong class="text-muted">Password</strong><br>********</p>
                                 </div>
                             </div>
                         </div>

@@ -37,6 +37,8 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users',
+            'nip' => 'nullable|string|max:100',       // Tambah ini
+            'jabatan' => 'nullable|string|max:255',   // Tambah ini
             'password' => 'required|string|min:6',
             'role' => 'required|in:admin,user',
         ]);
@@ -44,6 +46,8 @@ class UserController extends Controller
         User::create([
             'name' => $request->name,
             'username' => $request->username,
+            'nip' => $request->nip,                 // Tambah ini
+            'jabatan' => $request->jabatan,         // Tambah ini
             'password' => Hash::make($request->password),
             'role' => $request->role,
         ]);
@@ -56,7 +60,6 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         return view('admin-interface.edit-users', compact('user'));
-
     }
 
     // Simpan update user
@@ -65,12 +68,16 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username,' . $id,
+            'nip' => 'nullable|string|max:100',       // Tambah ini
+            'jabatan' => 'nullable|string|max:255',   // Tambah ini
             'role' => 'required|in:admin,user',
         ]);
 
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->username = $request->username;
+        $user->nip = $request->nip;               // Tambah ini
+        $user->jabatan = $request->jabatan;       // Tambah ini
         $user->role = $request->role;
 
         // Kalau ada password baru, hash dan update
@@ -82,7 +89,6 @@ class UserController extends Controller
 
         return redirect()->route('users.index')->with('success', 'User berhasil diupdate!');
     }
-
 
     // Hapus user
     public function destroyUser($id)
