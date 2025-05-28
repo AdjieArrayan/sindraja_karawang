@@ -28,22 +28,65 @@
 
         <ul class="nav flex-column gap-3 px-3">
           <li class="nav-item">
-            <a href="admin-dashboard" class="nav-link d-flex align-items-center gap-3 p-3 rounded-4">
+            <a href="{{ route('admin.dashboard') }}" class="nav-link d-flex align-items-center gap-3 p-3 rounded-4">
               <i class="ti ti-home fs-2"></i>
               <span class="nav-text">Dashboard</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="user-management" class="nav-link d-flex align-items-center gap-3 p-3 rounded-4">
+            <a href="{{ route('users.index') }}" class="nav-link d-flex align-items-center gap-3 p-3 rounded-4">
               <i class="ti ti-users fs-2"></i>
               <span class="nav-text">Pengguna</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="report" class="nav-link d-flex align-items-center gap-3 p-3 rounded-4">
+            <a href="{{ route('report.index') }}" class="nav-link d-flex align-items-center gap-3 p-3 rounded-4">
               <i class="ti ti-file fs-2"></i>
               <span class="nav-text">Laporan</span>
             </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center justify-content-between gap-3 p-3 rounded-4" data-bs-toggle="collapse" href="#manajemenUserMenu" role="button" aria-expanded="false" aria-controls="manajemenUserMenu">
+              <div class="d-flex align-items-center gap-3">
+                <i class="ti ti-notebook fs-2"></i>
+                <span class="nav-text">Form</span>
+              </div>
+              <i class="ti ti-chevron-down fs-4"></i>
+            </a>
+            <div class="collapse ps-5" id="manajemenUserMenu">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a href="{{ route('form.regu.index') }}" class="nav-link d-flex align-items-center gap-2 py-2">
+                    <i class="ti ti-users fs-5"></i>
+                    <span>Regu Pelapor</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('form.kegiatan.index') }}" class="nav-link d-flex align-items-center gap-2 py-2">
+                      <i class="ti ti-list-details fs-5"></i>
+                      <span>Jenis Kegiatan</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('form.anggota.index') }}" class="nav-link d-flex align-items-center gap-2 py-2">
+                      <i class="ti ti-user-plus fs-5"></i>
+                      <span>Anggota Terlibat</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('form.unsur.index') }}" class="nav-link d-flex align-items-center gap-2 py-2">
+                      <i class="ti ti-building-community fs-5"></i>
+                      <span>Unsur Terlibat</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{{ route('form.situasi.index') }}" class="nav-link d-flex align-items-center gap-2 py-2">
+                    <i class="ti ti-alert-circle fs-5"></i>
+                    <span>Situasi Kondisi</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
 
@@ -76,7 +119,7 @@
             <h4 class="fw-bold">Peringatan!</h4>
             <p class="text-muted fw-semibold">Apakah Anda yakin ingin keluar?</p>
             <div class="d-flex justify-content-center gap-3 mt-4">
-                <a href="login-form" type="button" class="btn btn-danger px-4">Ya, keluar!</a>
+                <a href="{{ route('login') }}" type="button" class="btn btn-danger px-4">Ya, keluar!</a>
                 <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Batalkan</button>
             </div>
             </div>
@@ -90,10 +133,39 @@
     <script>
         $(document).ready(function() {
             $('#user-management').DataTable({
-                order: [[0, 'asc']] // Ini harus di dalam objek konfigurasi
+                responsive: true,
+                autoWidth: false,
+                order: [[0, 'asc']]
             });
 
             $('#report').DataTable({
+                responsive: true,
+                autoWidth: false,
+                order: [[0, 'asc']]
+            });
+            $('#regu-table').DataTable({
+                responsive: true,
+                autoWidth: false,
+                order: [[0, 'asc']]
+            });
+            $('#kegiatan-table').DataTable({
+                responsive: true,
+                autoWidth: false,
+                order: [[0, 'asc']]
+            });
+            $('#anggota-table').DataTable({
+                responsive: true,
+                autoWidth: false,
+                order: [[0, 'asc']]
+            });
+            $('#unsur-table').DataTable({
+                responsive: true,
+                autoWidth: false,
+                order: [[0, 'asc']]
+            });
+            $('#situasi-table').DataTable({
+                responsive: true,
+                autoWidth: false,
                 order: [[0, 'asc']]
             });
         });

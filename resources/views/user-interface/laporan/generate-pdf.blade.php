@@ -69,11 +69,11 @@
             </tr>
             <tr>
                 <td>Regu</td>
-                <td>{{ $laporan->regu_pelapor }}</td>
+                <td>{{ $laporan->regu->nama_regu ?? '-' }}</td>
             </tr>
             <tr>
                 <td>Jenis Kegiatan</td>
-                <td>{{ $laporan->jenis_kegiatan }}</td>
+                <td>{{ $laporan->jenisKegiatan->nama_kegiatan ?? '-' }}</td>
             </tr>
             <tr>
                 <td>Tanggal Kegiatan</td>
@@ -89,11 +89,11 @@
             </tr>
             <tr>
                 <td>Anggota Terlibat</td>
-                <td>{{ $laporan->anggota_terlibat }}</td>
+                <td>{{ $laporan->anggotaTerlibat->anggota_terlibat ?? '-' }}</td>
             </tr>
             <tr>
                 <td>Unsur Terlibat</td>
-                <td>{{ $laporan->unsur_terlibat }}</td>
+                <td>{{ $laporan->unsurTerlibat->unsur_terlibat ?? '-' }}</td>
             </tr>
             <tr>
                 <td>Laporan Singkat</td>
@@ -101,22 +101,53 @@
             </tr>
             <tr>
                 <td>Situasi Kondisi</td>
-                <td>{{ $laporan->situasi_kondisi }}</td>
+                <td>{{ $laporan->situasiKondisi->situasi_kondisi ?? '-' }}</td>
             </tr>
             <tr>
                 <td>Catatan</td>
                 <td>{{ $laporan->catatan_laporan }}</td>
             </tr>
             <tr>
-                <td>Dokumentasi</td>
+                <td>Dokumentasi (Gambar)</td>
                 <td>
-                    @if ($laporan->dokumentasi_laporan)
-                        <img src="{{ public_path('storage/' . $laporan->dokumentasi_laporan) }}" class="img-doc" alt="Dokumentasi Kegiatan">
+                    @php
+                        $gambar = $laporan->dokumentasi->filter(function ($dok) {
+                            return in_array(strtolower($dok->file_type), ['jpg', 'jpeg', 'png']);
+                        });
+                    @endphp
+
+                    @if ($gambar->count())
+                        @foreach ($gambar as $dok)
+                            <div style="margin-bottom: 10px;">
+                                <img src="{{ public_path('storage/' . $dok->file_path) }}" width="200px">
+                            </div>
+                        @endforeach
                     @else
-                        Tidak ada dokumentasi.
+                        Tidak ada dokumentasi gambar.
                     @endif
                 </td>
             </tr>
+
+            @php
+                $pdfFiles = $laporan->dokumentasi->filter(function ($dok) {
+                    return strtolower($dok->file_type) === 'pdf';
+                });
+            @endphp
+
+            @if ($pdfFiles->count())
+            <tr>
+                <td>Dokumentasi (PDF)</td>
+                <td>
+                    @foreach ($pdfFiles as $pdf)
+                        <div style="margin-bottom: 10px;">
+                            <a href="{{ public_path('storage/' . $pdf->file_path) }}">{{ basename($pdf->file_path) }}</a>
+                        </div>
+                    @endforeach
+                </td>
+            </tr>
+            @endif
+
+
         </table>
     </div>
 </body>

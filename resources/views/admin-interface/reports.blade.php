@@ -1,6 +1,6 @@
 @extends('layouts.admin.dashboard-layout')
 
-@section('title', 'Report')
+@section('title', 'Laporan')
 
 @section('sidebar')
 
@@ -15,6 +15,17 @@
         <div class="container-fluid mt-4 p-4 rounded-4 shadow" style="background-color: #fdf1f1; border: 2px solid #007bff;">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h2 class="fw-bold" style="color: #4a4a4a; font-family: 'Poppins', sans-serif;">Daftar Pelapor</h2>
+
+                <form method="GET" action="{{ route('report.index') }}" id="filterForm" class="mb-3">
+                    <select name="bulan" id="bulan" class="form-select w-auto d-inline-block">
+                        <option value="">Semua</option>
+                        @for ($i = 1; $i <= 12; $i++)
+                            <option value="{{ $i }}" {{ request('bulan') == $i ? 'selected' : '' }}>
+                                {{ \Carbon\Carbon::create()->month($i)->translatedFormat('F') }}
+                            </option>
+                        @endfor
+                    </select>
+                </form>
             </div>
 
         <table id="report" class="table table-striped nowrap datatables" style="width:100%">
@@ -32,7 +43,7 @@
                     <tr>
                         <td>{{ $item->id_laporan }}</td>
                         <td>{{ $item->nama_pelapor }}</td>
-                        <td>{{ $item->jenis_kegiatan }}</td>
+                        <td>{{ $item->jenisKegiatan->nama_kegiatan ?? '-' }}</td>
                         <td>{{ \Carbon\Carbon::parse($item->tanggal_kegiatan)->format('d/m/Y') }}</td>
                         <td class="d-flex gap-2">
                             <a href="#" data-bs-toggle="modal" data-bs-target="#modalDetailLaporan{{ $item->id_laporan }}" title="View">
@@ -62,13 +73,41 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-6 mb-2"><strong class="text-muted">Nama Pelapor</strong><br>{{ $item->nama_pelapor }}</div>
-                            <div class="col-md-6 mb-2"><strong class="text-muted">Regu Pelapor</strong><br>{{ $item->regu_pelapor }}</div>
-                            <div class="col-md-6 mb-2"><strong class="text-muted">Jenis Kegiatan</strong><br>{{ $item->jenis_kegiatan }}</div>
+                            <div class="col-md-6 mb-2"><strong class="text-muted">Regu Pelapor</strong><br>{{ $item->regu->nama_regu ?? '-' }}</div>
+                            <div class="col-md-6 mb-2"><strong class="text-muted">Jenis Kegiatan</strong><br>{{ $item->jenisKegiatan->nama_kegiatan ?? '-' }}</div>
                             <div class="col-md-6 mb-2"><strong class="text-muted">Tanggal dan Waktu Kegiatan</strong><br>{{ \Carbon\Carbon::parse($item->tanggal_kegiatan)->format('d-m-Y') }} {{ $item->waktu_kegiatan }}</div>
                             <div class="col-md-6 mb-2"><strong class="text-muted">Lokasi Kegiatan</strong><br>{{ $item->lokasi_kegiatan }}</div>
-                            <div class="col-md-6 mb-2"><strong class="text-muted">Anggota Terlibat</strong><br>{{ $item->anggota_terlibat }}</div>
-                            <div class="col-md-6 mb-2"><strong class="text-muted">Dokumentasi</strong><br>
-                                <img src="{{ public_path('storage/' . $item->dokumentasi_laporan) }}" class="img-doc" alt="Dokumentasi Kegiatan">
+                            <div class="col-md-6 mb-2"><strong class="text-muted">Anggota Terlibat</strong><br>{{ $item->anggotaTerlibat->anggota_terlibat ?? '-' }}</div>
+                            <div class="col-md-12 mb-2">
+                                <strong class="text-muted">Dokumentasi</strong><br>
+
+                                @if ($item->dokumentasi && $item->dokumentasi->count())
+                                    <div class="row">
+                                        @foreach ($item->dokumentasi as $dok)
+                                            @php
+                                                $ext = strtolower(pathinfo($dok->file_path, PATHINFO_EXTENSION));
+                                            @endphp
+                                            <div class="col-md-4 mb-3">
+                                                @if (in_array($ext, ['jpg', 'jpeg', 'png']))
+                                                    <img src="{{ asset('storage/' . $dok->file_path) }}"
+                                                         alt="Dokumentasi"
+                                                         class="img-fluid rounded shadow-sm"
+                                                         style="max-height: 200px; width: 100%; object-fit: cover;">
+                                                @elseif ($ext === 'pdf')
+                                                    <a href="{{ asset('storage/' . $dok->file_path) }}"
+                                                       target="_blank"
+                                                       class="btn btn-outline-primary w-100">
+                                                        📄 Lihat File PDF
+                                                    </a>
+                                                @else
+                                                    <p class="text-danger">File tidak didukung</p>
+                                                @endif
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                @else
+                                    <p class="text-muted">Tidak ada dokumentasi.</p>
+                                @endif
                             </div>
                         </div>
                         <div>
@@ -112,12 +151,17 @@
 </main>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('bulan').addEventListener('change', function () {
+            document.getElementById('filterForm').submit();
+        });
+    });
+
     $(document).ready(function() {
         $('#tabelLaporan').DataTable({
             order: [[0, 'asc']] // Kolom pertama (ID) diurutkan ascending
         });
     });
 </script>
-
 
 @endsection

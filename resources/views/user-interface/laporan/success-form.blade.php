@@ -12,9 +12,14 @@
     <body>
 
         <div class="success-message-container d-flex flex-column align-items-center overflow-hidden">
-            <header class="success-header w-100 text-white text-center">
+            <header class="success-header w-100 text-white text-center position-relative">
                 Laporan Telah Dibuat
+
+                <a href="/user-main" class="d-none d-lg-flex" style="position: absolute; top: 30px; right: 20px;">
+                    <img src="{{ asset('style/assets/image/logo_img/back-logo.png') }}" alt="Back" style="width: 80px; height: 80px;"/>
+                </a>
             </header>
+
             <main class="container d-flex flex-column align-items-center">
                 <a href="/user-main">
                     <img src="{{asset('style/assets/image/logo_img/hero_logo.png') }}" alt="Success Illustration" class="success-illustration img-fluid mt-5"/>

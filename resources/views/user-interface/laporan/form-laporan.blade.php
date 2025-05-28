@@ -28,22 +28,28 @@
             <div class="form-group">
                 <label for="regu_pelapor" class="label">Regu Pelapor</label>
                 <div class="select-wrapper">
-                  <select id="regu" name="regu_pelapor" class="input-field" placeholder="Pilih Regu Pelapor">
-                    <option value="Regu 1">Regu 1</option>
-                    <option value="Regu 2">Regu 2</option>
-                    <option value="Regu 3">Regu 3</option>
-                  </select>
+                    <select name="regu_id" class="input-field" required>
+                        <option value="">-- Pilih Regu Pelapor --</option>
+                        @foreach ($regu as $regulaporan)
+                            <option value="{{ $regulaporan->id_regu }}">{{ $regulaporan->nama_regu }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
+
+            @error('regu_id')
+                <div class="error-message">{{ $message }}</div>
+            @enderror
 
             <div class="form-group">
                 <label for="kegiatan" class="label">Jenis Kegiatan</label>
                 <div class="select-wrapper">
-                  <select id="kegiatan" name="jenis_kegiatan" class="input-field" placeholder="Pilih Jenis Kegiatan">
-                    <option value="Kegiatan 1">Kegiatan 1</option>
-                    <option value="Kegiatan 2">Kegiatan 2</option>
-                    <option value="Kegiatan 3">Kegiatan 3</option>
-                  </select>
+                    <select id="kegiatan" name="kegiatan_id" class="input-field" required>
+                        <option value="">-- Pilih Jenis Kegiatan --</option>
+                        @foreach ($jenis_kegiatan as $kegiatan)
+                            <option value="{{ $kegiatan->id_kegiatan }}">{{ $kegiatan->nama_kegiatan }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
 
@@ -77,24 +83,24 @@
           <div class="form-group">
             <label for="anggota-terlibat" class="label">Anggota Terlibat</label>
             <div class="select-wrapper">
-              <select id="anggota-terlibat" name="anggota_terlibat" class="input-field" placeholder="Pilih Anggota Terlibat">
-                <option value="Anggota 1">Anggota 1</option>
-                <option value="Anggota 2">Anggota 2</option>
-                <option value="Anggota 3">Anggota 3</option>
-                <option value="Anggota 4">Anggota 4</option>
-              </select>
+                <select id="anggota_terlibat" name="anggota_id" class="input-field" required>
+                    <option value="">-- Pilih Anggota Terlibat --</option>
+                    @foreach ($anggota_terlibat as $anggota)
+                        <option value="{{ $anggota->id_anggota }}">{{ $anggota->anggota_terlibat }}</option>
+                    @endforeach
+                </select>
             </div>
           </div>
 
           <div class="form-group">
             <label for="unsur-terlibat" class="label">Unsur Terlibat</label>
             <div class="select-wrapper">
-              <select id="unsur-terlibat" name="unsur_terlibat" class="input-field" placeholder="Pilih Unsur Terlibat">
-                <option value="Unsur 1">Unsur 1</option>
-                <option value="Unsur 2">Unsur 2</option>
-                <option value="Unsur 3">Unsur 3</option>
-                <option value="Unsur 4">Unsur 4</option>
-              </select>
+                <select id="unsur_terlibat" name="unsur_id" class="input-field" required>
+                    <option value="">-- Pilih Unsur Terlibat --</option>
+                    @foreach ($unsur_terlibat as $unsur)
+                        <option value="{{ $unsur->id_unsur }}">{{ $unsur->unsur_terlibat }}</option>
+                    @endforeach
+                </select>
             </div>
           </div>
         </div>
@@ -109,12 +115,12 @@
           <div class="form-group">
             <label for="unsur-terlibat" class="label">Situasi Kondisi</label>
             <div class="select-wrapper">
-              <select id="situasi_kondisi" name="situasi_kondisi" class="input-field" placeholder="Pilih Unsur Terlibat">
-                <option value="Sikon 1">Sikon 1</option>
-                <option value="Sikon 2">Sikon 2</option>
-                <option value="Sikon 3">Sikon 3</option>
-                <option value="Sikon 4">Sikon 4</option>
-              </select>
+                <select id="situasi_kondisi" name="situasi_id" class="input-field" required>
+                    <option value="">-- Pilih Situasi Kondisi --</option>
+                    @foreach ($situasi_kondisi as $sikon)
+                        <option value="{{ $sikon->id_situasi }}">{{ $sikon->situasi_kondisi }}</option>
+                    @endforeach
+                </select>
             </div>
           </div>
         </div>
@@ -130,14 +136,14 @@
                 </div>
                 <div class="dashed-border"></div>
               </label>
-              <input type="file" id="file-upload" name="dokumentasi_laporan" accept="image/*" style="display: none;">
+              <input type="file" id="file-upload" name="dokumentasi_laporan[]" accept="image/*,.pdf" multiple style="display: none;">
             </div>
           <br>
 
-        <div class="form-group">
-            <label for="nama" class="label">Laporan Singkat</label>
-            <textarea id="catatan_laporan" name="catatan_laporan" class="input-field-catatan" placeholder="Tuliskan Laporan Anda Disini"></textarea>
-        </div>
+            <div class="form-group">
+                <label for="nama" class="label">Laporan Singkat</label>
+                <textarea id="catatan_laporan" name="catatan_laporan" class="input-field-catatan" placeholder="Tuliskan Laporan Anda Disini"></textarea>
+            </div>
         </div>
 
         <footer class="form-footer">

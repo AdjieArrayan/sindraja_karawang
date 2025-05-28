@@ -1,6 +1,6 @@
 @extends('layouts.admin.dashboard-layout')
 
-@section('title', 'User Management')
+@section('title', 'Manajemen User')
 
 @section('sidebar')
 
